@@ -1,6 +1,5 @@
 import pytest
 import main
-import mock
 
 name = "A B C"
 post = "abc"
