@@ -109,6 +109,8 @@ def show_menu():
           "6.Прочитать из файла\n"
           "7.Сохранить в файл\n"
           "8.Выйти")
+    command = input("Введите номер опции: ")
+    return command
 
 
 def add_person():
@@ -117,12 +119,14 @@ def add_person():
     time_ = float(input("Введите отработанное время в часах сотрудника: "))
     salary_ = float(input("Введите оклад сотрудника: "))
     persons.append(Person(name_, post_, time_, salary_))
+    return 1
 
 
 def del_person():
     show_persons()
     p_id = input("Введите номер сотрудника: ")
     del persons[int(p_id)]
+    return 1
 
 
 def edit_person():
@@ -138,6 +142,7 @@ def edit_person():
               "Выберите, что хотите отредактировать:\n")
     change = input("Введите новые данные: ")
     persons[pers].change_data(v, change)
+    return 1
 
 
 def show_persons():
@@ -146,6 +151,7 @@ def show_persons():
         return 0
     for i in range(0, len(persons)):
         print(f"{i}. {persons[i]}")
+    return 1
 
 
 def read_from_file():
@@ -162,6 +168,7 @@ def read_from_file():
         salary = float(sheet[row][3].value)
         persons.append(Person(name, post, time, salary))
     book.close()
+    return 1
 
 
 def save_to_file():
@@ -181,11 +188,11 @@ def save_to_file():
         sheet.cell(row=i + 2, column=5).value = persons[i].get_payment()
     book.save('data.xlsx')
     book.close()
+    return 1
 
 
 while (True):
-    show_menu()
-    command = input("Введите номер опции: ")
+    command = show_menu()
     match command.split():
         case ["1"]:
             add_person()
