@@ -190,29 +190,29 @@ def save_to_file():
     book.close()
     return 1
 
-
-while (True):
-    command = show_menu()
-    match command.split():
-        case ["1"]:
-            add_person()
-        case ["2"]:
-            del_person()
-        case ["3"]:
-            show_persons()
-        case ["4"]:
-            edit_person()
-        case ["5"]:
-            print(f"Текущая норма часов: {Person.hours_norm}")
-            value = input("Введите новое значение нормы часов: ")
-            Person.change_hours_norm(value)
-        case ["6"]:
-            read_from_file()
-        case ["7"]:
-            save_to_file()
-        case ["8"]:
-            os.system("cls")
-            exit()
-        case _:
-            print("Неверный ввод")
-            continue
+if __name__ == "__main__":
+    while (True):
+        command = show_menu()
+        match command.split():
+            case ["1"]:
+                add_person()
+            case ["2"]:
+                del_person()
+            case ["3"]:
+                show_persons()
+            case ["4"]:
+                edit_person()
+            case ["5"]:
+                print(f"Текущая норма часов: {Person.hours_norm}")
+                value = input("Введите новое значение нормы часов: ")
+                Person.change_hours_norm(value)
+            case ["6"]:
+                read_from_file()
+            case ["7"]:
+                save_to_file()
+            case ["8"]:
+                os.system("cls")
+                exit()
+            case _:
+                print("Неверный ввод")
+                continue
