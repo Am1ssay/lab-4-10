@@ -2,6 +2,7 @@ import os
 import openpyxl
 
 
+
 class Integer:
 
     @classmethod

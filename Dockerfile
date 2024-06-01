@@ -6,7 +6,7 @@ RUN apt-get update
 RUN apt-get install -y git
 
 # Клонируем репозиторий
-RUN git clone https://github.com/kurap1ka00/resource-analyzer.git
+RUN git clone https://github.com/am1ssay/lab-4-10
 
 # Переходим в директорию resource-analyzer
 WORKDIR /resource-analyzer
