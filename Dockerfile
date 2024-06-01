@@ -11,8 +11,6 @@ RUN git clone https://github.com/am1ssay/lab-4-10
 # Переходим в директорию resource-analyzer
 WORKDIR /resource-analyzer
 
-# Устанавливаем зависимости из requirements.txt
-RUN pip install -r requirements.txt
 
 # Запускаем main.py
 CMD ["python3", "./main.py"]
